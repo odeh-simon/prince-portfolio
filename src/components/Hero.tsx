@@ -21,26 +21,30 @@ export default function Hero() {
   return (
     <div className="flex flex-col gap-9 w-full">
       <h1
-        className={`${
-          theme === "dark" ? "text-[#858585]" : "text-[#717171]"
-        } font-bold text-2xl lg:text-[56px] leading-[40px] lg:leading-[73px]`}
+        className={` font-bold text-2xl lg:text-[56px] leading-[40px] lg:leading-[73px]`}
       >
-        Hi there,{" "}
+        <span className={`${
+          theme === "dark" ? "text-[#858585]" : "text-[#717171]"
+        }`}>Hi there,{" "}</span>
         <span
-          className={`${theme === "dark" ? "text-[#F1F1F1]" : "text-[#222]"}`}
+          className=""
         >
           I am Prince Idoma.
         </span>{" "}
-        <br /> User Interface and User Experience Designer.
+        <br /><span className={`${
+          theme === "dark" ? "text-[#858585]" : "text-[#717171]"
+        }`}> User Interface and User Experience Designer.</span>
       </h1>
 
       <h2
-        className={`${
-          theme === "dark" ? "text-[#CCC]" : "text-[#222]"
-        } font-medium text-sm lg:text-lg leading-[22px] lg:leading-[30px]`}
+        className={`font-medium text-sm lg:text-lg leading-[22px] lg:leading-[30px]`}
       >
-        I specialize in crafting human-centered designs that not only convert
-        effectively but also resonate deeply with users.{" "}
+        <span className={`${
+          theme === "dark" ? "text-[#CCC]" : "text-[#222]"
+        }`}>
+          I specialize in crafting human-centered designs that not only convert
+          effectively but also resonate deeply with users.{" "}
+        </span>
         <span
           className={`${
             theme === "dark" ? "text-[#858585]" : "text-[#717171]"
@@ -54,24 +58,28 @@ export default function Hero() {
 
       <div className="flex w-full justify-between lg:justify-start items-center lg:gap-8">
         <div
-          className={`flex flex-col gap-2 font-medium text-sm lg:text-lg leading-[22px] lg:leading-[30px] ${
-            theme === "dark" ? "text-[#ccc]" : "text-[#222]"
-          }`}
+          className={`flex flex-col gap-2 font-medium text-sm lg:text-lg leading-[22px] lg:leading-[30px] `}
         >
-          <p>You can shoot me an email here:</p>
+          <p className={`${
+            theme === "dark" ? "text-[#ccc]" : "text-[#222]"
+          }`}>You can shoot me an email here:</p>
           <a
             href="mailto:idomaprince1@gmail.com"
             target="_blank"
-            className="underline"
+            className={`underline ${
+              theme === "dark" ? "text-[#ccc]" : "text-[#222]"
+            }`}
           >
             idomaprince1@gmail.com
           </a>
         </div>
         <button
           onClick={handleCopyEmail}
-          className={`px-3 lg:px-[30px] py-[9px] lg:py-[15px] border hover:text-[20px] rounded-[30px] font-medium text-sm md:text-[18px] leading-[30px] w-fit cursor-pointer mt-2 transition duration-1000 ease-in-out ${theme === "dark" ? "border-[#ccc] text-[#ccc]" : "border-[#222] text-[#222]"}`}
+          className={`px-3 lg:px-[30px] py-[9px] lg:py-[15px] border hover:text-[20px] rounded-[30px] font-medium text-sm md:text-[18px] leading-[30px] w-fit cursor-pointer mt-2 transition duration-1000 ease-in-out ${theme === "dark" ? "border-[#ccc]" : "border-[#222]"}`}
         >
-          {copyStatus}
+          <p className={`${
+            theme === "dark" ? "text-[#ccc]" : "text-[#222]"
+          }`}>{copyStatus}</p>
         </button>
       </div>
       <div>

@@ -31,7 +31,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <ThemeProvider defaultTheme="dark" attribute="class">
+        <ThemeProvider defaultTheme="light" attribute="class">
           <NavBar /> {/* Render the NavBar component */}
           {children}
           <Footer /> {/* Render the Footer component */}

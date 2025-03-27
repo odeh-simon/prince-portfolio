@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { usePathname } from "next/navigation"; // Import the Next.js pathname hook
+import { usePathname } from "next/navigation"; 
 import whiteMenu from "../assets/menu-white.svg";
 import blackMenu from "../assets/menu-black.svg";
 import Logo from "./Logo";
@@ -13,7 +13,7 @@ import ThemeToggle from "./ThemeToggle";
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme } = useTheme();
-  const pathname = usePathname(); // This dynamically updates when the route changes
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,6 +22,15 @@ export default function NavBar() {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  const menuIcon = () => {
+    if (theme === "dark"){
+      return whiteMenu;
+    }
+    else{
+      return blackMenu;
+    }
+  }
 
   return (
     <nav className="w-full flex items-center justify-between px-3 lg:py-3 lg:px-5 transition duration-500">
@@ -64,14 +73,14 @@ export default function NavBar() {
       </Link>
 
       {/* Mobile Hamburger Menu */}
-      <div className="lg:hidden flex items-center">
+      <div className="lg:hidden flex items-center z-50">
         <button onClick={toggleMenu} aria-label="Toggle Menu" className="cursor-pointer">
           {!isMenuOpen ? (
-            <Image src={theme === "dark" ? whiteMenu : blackMenu} alt="Hamburger Menu Icon" className="w-[24px] h-[24px]" />
+            <Image src={menuIcon()} alt="Hamburger Menu Icon" className="w-[24px] h-[24px]" width={24} height={24} />
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-[24px] h-[24px] ${theme === "dark" ? "text-white" : "text-black"}`}
+              className={`w-[32px] h-[32px] ${theme === "dark" ? "text-white" : "text-black"}`}
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -89,11 +98,11 @@ export default function NavBar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div
-          className={`absolute top-[90px] flex flex-col justify-between left-0 w-full lg:hidden h-screen font-bold ${
-            theme === "dark" ? "bg-[#131211] text-[#F1F1F1]" : "bg-[#F1F1F1] text-[#131211]"
-          } z-50 shadow-lg p-4`}
+          className={`absolute top-[80px] flex flex-col justify-between left-0 w-full lg:hidden h-screen font-bold z-50 shadow-lg p-4 `}
         >
-          <div className="flex flex-col gap-[24px] flex-grow">
+          <div className={`flex flex-col gap-[24px] flex-grow pt-4 ${
+            theme === "dark" ? "bg-[#131211]" : "bg-[#F1F1F1]"
+          }`}>
             <div className="flex flex-col gap-2 items-center border-b border-[#CCCCCC59] pb-10">
               {pathname === "/" && <span className="h-[10px] w-[10px] bg-[#DE950C] rounded-full"></span>}
               <Link onClick={closeMenu} href="/" className={`hover:text-[#DE950C] transition duration-1000 ${pathname === "/" ? "text-[#DE950C]" : "mt-4"}`}>
@@ -116,7 +125,9 @@ export default function NavBar() {
           </div>
 
           {/* Theme Toggle Section */}
-          <div className="flex items-center justify-between w-full mb-[11vh] pb-2">
+          <div className={`flex items-center justify-between w-full mb-[11vh] pb-2 ${
+            theme === "dark" ? "bg-[#131211]" : "bg-[#F1F1F1]"
+          }`}>
             <p className="text-sm">Switch between modes</p>
             <ThemeToggle />
           </div>

@@ -1,3 +1,4 @@
+
 import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar"; 

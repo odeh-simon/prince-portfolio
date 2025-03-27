@@ -11,7 +11,15 @@ export default function Home() {
   const { theme } = useTheme();
   interface Project {
     id: number;
-    [key: string]: unknown; // Adjust this to match the actual structure of your project data
+    projectName: string;
+    projectStatus: string;
+    projectSubtitle: string;
+    projectDescription: string;
+    darkHeaderImage: string;
+    lightHeaderImage: string;
+    caseStudyLink?: string;
+    liveProjectLink?: string;
+    linkText?: string;
   }
 
   const [projectData, setProjectData] = useState<Project[]>([]);
@@ -32,7 +40,7 @@ export default function Home() {
         const response = await fetch(
           "https://res.cloudinary.com/ddax4blfi/raw/upload/v1742916146/mock_bjeb1s.json"
         );
-        const data = await response.json();
+        const data: Project[] = await response.json(); 
 
         // Save data to state and local storage
         setProjectData(data);

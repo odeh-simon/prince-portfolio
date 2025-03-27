@@ -11,6 +11,8 @@ export interface Project {
   yearOfInception?: number | null;
   darkHeroImage: string;
   lightHeroImage: string;
+  darkHeaderImage: string;
+  lightHeaderImage: string;
   headerText: string;
   overviewText: string;
   overviewImages: string[];

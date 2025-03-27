@@ -1,24 +1,31 @@
 "use client";
 import React from "react";
-// import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
-export default function ProjectCard({ project }: { project: any }) {
-  // const router = useRouter();
+// Define the type for the project prop
+interface Project {
+  projectName: string;
+  projectStatus: string;
+  projectSubtitle: string;
+  projectDescription: string;
+  darkHeaderImage: string;
+  lightHeaderImage: string;
+  caseStudyLink?: string | null;
+  liveProjectLink?: string | null;
+  linkText?: string | null;
+}
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+export default function ProjectCard({ project }: ProjectCardProps) {
   const { theme } = useTheme();
 
-  // const handleCardClick = () => {
-  //   router.push(`/projects/${project.id}`);
-  // };
-
   const projectCardImage = () => {
-    if (theme === "dark") {
-      return project.darkHeaderImage;
-    } else {
-      return project.lightHeaderImage;
-    }
+    return theme === "dark" ? project.darkHeaderImage : project.lightHeaderImage;
   };
 
   return (
@@ -28,7 +35,6 @@ export default function ProjectCard({ project }: { project: any }) {
           ? "bg-[#1E1E1E] border-[#CCCCCC59]"
           : "bg-[#ECECEC] border-[#22222259]"
       } border rounded-[20px] w-full p-4 cursor-pointer hover:shadow-md transition flex flex-col lg:flex-row gap-4 md:gap-10`}
-      
     >
       {/* Left container for name and subtitle */}
       <div className="flex flex-col flex-1 lg:w-1/2">

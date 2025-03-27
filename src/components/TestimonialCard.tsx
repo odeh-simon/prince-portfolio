@@ -1,10 +1,21 @@
+"use client"
 import React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
-const TestimonialCard = ({ header, body, avatar, name, role }) => {
+// Define the type for the component props
+interface TestimonialCardProps {
+  header: string;
+  body: string;
+  avatar: string;
+  name: string;
+  role: string;
+}
+
+// Use TypeScript types instead of PropTypes
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ header, body, avatar, name, role }) => {
   const { theme } = useTheme();
+  
   return (
     <div
       className={`${
@@ -57,14 +68,6 @@ const TestimonialCard = ({ header, body, avatar, name, role }) => {
       </div>
     </div>
   );
-};
-
-TestimonialCard.propTypes = {
-  header: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
 };
 
 export default TestimonialCard;

@@ -12,13 +12,13 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      react: require.resolve("react"),
-    };
-    return config;
-  },
+  // webpack: (config) => {
+  //   config.resolve.alias = {
+  //     ...config.resolve.alias,
+  //     react: require.resolve("react"),
+  //   };
+  //   return config;
+  // },
   /* config options here */
 };
 

@@ -1,4 +1,4 @@
-"use client"; // Required for client-side packages like react-slick
+"use client";
 
 import React from "react";
 import Slider from "react-slick";

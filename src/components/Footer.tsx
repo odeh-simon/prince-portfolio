@@ -47,7 +47,7 @@ export default function Footer() {
           </h2>
           <a
             href="mailto:idomaprince1@gmail.com"
-            className="text-[#CCC] text-center font-medium md:font-bold text-sm md:text-[20px] underline"
+            className="text-[#CCC] text-center font-medium md:font-bold text-sm md:text-[20px] hover:text-[#DE950C] transition duration-700 underline"
           >
             idomaprince1@gmail.com
           </a>

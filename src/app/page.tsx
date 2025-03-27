@@ -72,7 +72,7 @@ export default function Home() {
       )}
 
       {/* testimonial section */}
-      <section className="flex flex-col mt-10 lg:mt-12">
+      <section className="flex flex-col mt-10 lg:mt-12 mb-12 md:mb-20">
         <h1 className="text-xl md:text-[40px] font-bold">Reviews</h1>
         <p className={`${
               theme === "dark" ? "text-[#858585]" : "text-[#717171]"

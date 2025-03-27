@@ -66,7 +66,7 @@ export default function Hero() {
           <a
             href="mailto:idomaprince1@gmail.com"
             target="_blank"
-            className={`underline ${
+            className={`underline hover:text-[#DE950C] transition duration-700 ${
               theme === "dark" ? "text-[#ccc]" : "text-[#222]"
             }`}
           >

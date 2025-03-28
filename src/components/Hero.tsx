@@ -39,16 +39,12 @@ export default function Hero() {
       <h2
         className={`font-medium text-sm lg:text-lg leading-[22px] lg:leading-[30px]`}
       >
-        <span className={`${
-          theme === "dark" ? "text-[#CCC]" : "text-[#222]"
-        }`}>
+        <span className={``}>
           I specialize in crafting human-centered designs that not only convert
           effectively but also resonate deeply with users.{" "}
         </span>
         <span
-          className={`${
-            theme === "dark" ? "text-[#858585]" : "text-[#717171]"
-          }`}
+          className={``}
         >
           My approach focuses on understanding user needs and behaviors,
           ensuring that every element of the design enhances the overall
@@ -60,26 +56,20 @@ export default function Hero() {
         <div
           className={`flex flex-col gap-2 font-medium text-sm lg:text-lg leading-[22px] lg:leading-[30px] `}
         >
-          <p className={`${
-            theme === "dark" ? "text-[#ccc]" : "text-[#222]"
-          }`}>You can shoot me an email here:</p>
+          <p className={``}>You can shoot me an email here:</p>
           <a
             href="mailto:idomaprince1@gmail.com"
             target="_blank"
-            className={`underline hover:text-[#DE950C] transition duration-700 ${
-              theme === "dark" ? "text-[#ccc]" : "text-[#222]"
-            }`}
+            className={`underline hover:text-[#DE950C] transition duration-700 `}
           >
             idomaprince1@gmail.com
           </a>
         </div>
         <button
           onClick={handleCopyEmail}
-          className={`px-3 lg:px-[30px] py-[9px] lg:py-[15px] border hover:text-[20px] rounded-[30px] font-medium text-sm md:text-[18px] leading-[30px] w-fit cursor-pointer mt-2 transition duration-1000 ease-in-out ${theme === "dark" ? "border-[#ccc]" : "border-[#222]"}`}
+          className={`px-3 lg:px-[30px] py-[9px] lg:py-[15px] border hover:text-[20px] rounded-[30px] font-medium text-sm md:text-[18px] leading-[30px] w-fit cursor-pointer mt-2 transition duration-1000 ease-in-out border-[#CCCCCC66] shadow-xl`}
         >
-          <p className={`${
-            theme === "dark" ? "text-[#ccc]" : "text-[#222]"
-          }`}>{copyStatus}</p>
+          <p className={``}>{copyStatus}</p>
         </button>
       </div>
       <div>

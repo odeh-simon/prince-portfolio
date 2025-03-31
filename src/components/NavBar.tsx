@@ -130,9 +130,7 @@ export default function NavBar() {
           </div>
 
           {/* Theme Toggle Section */}
-          <div className={`flex items-center justify-between w-full p-4 fixed bottom-0 left-0 bg-opacity-90 z-50 ${
-            theme === "dark" ? "bg-[#131211]" : "bg-[#F1F1F1]"
-          }`}>
+          <div className={`flex items-center justify-between w-full p-4 fixed bottom-0 left-0 bg-opacity-90 z-50`}>
             <p className="text-sm">Switch between modes</p>
             <ThemeToggle />
           </div>

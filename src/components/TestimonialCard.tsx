@@ -22,9 +22,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ header, body, avatar,
         theme === "dark"
           ? "bg-[#1E1E1E] border-[#CCCCCC59]"
           : "bg-[#ECECEC] border-[#22222259]"
-      } border rounded-[10px] p-5 flex flex-col gap-5 md:gap-9 w-fit`}
+      } border rounded-[10px] p-5 flex flex-col gap-5 md:gap-9 w-fit relative`}
     >
-      <div className="flex flex-col gap-2 md:gap-6">
+      <div className="flex flex-col gap-2 md:gap-6 mb-28">
         <h3
           className={`${
             theme === "dark" ? "text-[#F1F1F1]" : "text-[#131211]"
@@ -41,7 +41,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ header, body, avatar,
         </p>
       </div>
 
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 absolute bottom-0 mb-4">
         <Image
           className="w-auto h-auto rounded-full shrink-0"
           src={avatar}

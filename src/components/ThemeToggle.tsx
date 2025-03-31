@@ -33,7 +33,7 @@ export default function ThemeToggle() {
       
       {/* The label (Light Mode / Dark Mode) */}
       <span
-        className={` text-base font-bold capitalize 
+        className={`text-sm md:text-base font-bold capitalize 
           ${isDark ? "text-[#F1F1F1]" : "text-[#1E1E1E] text-right ml-auto"}
         `}
       >

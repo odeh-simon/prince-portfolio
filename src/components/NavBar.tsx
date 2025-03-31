@@ -17,27 +17,32 @@ export default function NavBar() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+    document.body.style.overflow = "auto"; // Restore scrolling
   };
 
   const menuIcon = () => {
-    if (theme === "dark"){
+    if (theme === "dark") {
       return whiteMenu;
-    }
-    else{
+    } else {
       return blackMenu;
     }
-  }
+  };
 
   return (
-    <nav className="w-full flex items-center justify-between px-3 lg:py-3 lg:px-5 transition duration-500">
+    <nav className="w-full flex items-center justify-between px-3 pt-6 lg:pt-10 pb-4 lg:px-5 transition duration-500">
       {/* Logo */}
-      <div>
+      <Link href='/'>
         <Logo />
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center gap-[80px]">
@@ -98,11 +103,11 @@ export default function NavBar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div
-          className={`absolute top-[80px] flex flex-col justify-between left-0 w-full lg:hidden h-screen font-bold z-50 shadow-lg p-4 `}
+          className={`fixed top-0 left-0 mt-28 flex flex-col justify-between w-full h-screen lg:hidden font-bold z-50 shadow-lg overflow-hidden p-4 ${
+            theme === "dark" ? "bg-[#0a0a0a]" : "bg-[#ffffff]"
+          }`}
         >
-          <div className={`flex flex-col gap-[24px] flex-grow pt-4 ${
-            theme === "dark" ? "bg-[#131211]" : "bg-[#F1F1F1]"
-          }`}>
+          <div className="flex flex-col gap-[24px] flex-grow pt-4">
             <div className="flex flex-col gap-2 items-center border-b border-[#CCCCCC59] pb-10">
               {pathname === "/" && <span className="h-[10px] w-[10px] bg-[#DE950C] rounded-full"></span>}
               <Link onClick={closeMenu} href="/" className={`hover:text-[#DE950C] transition duration-1000 ${pathname === "/" ? "text-[#DE950C]" : "mt-4"}`}>
@@ -125,7 +130,7 @@ export default function NavBar() {
           </div>
 
           {/* Theme Toggle Section */}
-          <div className={`flex items-center justify-between w-full mb-[11vh] pb-2 ${
+          <div className={`flex items-center justify-between w-full p-4 fixed bottom-0 left-0 bg-opacity-90 z-50 ${
             theme === "dark" ? "bg-[#131211]" : "bg-[#F1F1F1]"
           }`}>
             <p className="text-sm">Switch between modes</p>

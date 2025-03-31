@@ -44,7 +44,7 @@ export default function Hero() {
           effectively but also resonate deeply with users.{" "}
         </span>
         <span
-          className={``}
+          className={`${theme === "dark"? "text-[#858585]" : "text-[#717171]"}`}
         >
           My approach focuses on understanding user needs and behaviors,
           ensuring that every element of the design enhances the overall

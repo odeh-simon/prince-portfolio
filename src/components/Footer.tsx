@@ -20,7 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-container flex flex-col gap-[211px] justify-between px-5 pt-[80px] pb-3">
+    <footer className="footer-container flex flex-col gap-[211px] justify-between px-5 pt-[80px] pb-3 relative">
       <div className="flex flex-col items-center justify-center gap-[100px]">
         <div className="flex flex-col gap-3">
           <div className="flex items-center justify-center gap-2 px-6 py-4 mb-3 bg-[#FFFFFF4D] w-fit mx-auto border border-[#FFAB1059] rounded-[10px] backdrop-blur-[2px] shadow-[0px_7px_4px_0px_#00000033]">
@@ -58,33 +58,34 @@ export default function Footer() {
             {copyStatus}
           </button>
 
-          {/* socila links */}
-          <div className="flex items-center gap-9 mt-9 lg:gap-14 lg:mt-14">
+          {/* social links */}
+          <div className="flex items-center gap-9 mt-9 lg:gap-14 lg:mt-14 mb-52">
             <a href="https://www.linkedin.com/in/idoma-prince?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
               <Image
                 src={linkedinIcon}
                 alt="Linkedin Icon"
-                className="w-[46.957px] h-[46.957px] lg:w-[70px] lg:h-[70px] hover:scale-110 transition duration-700"
+                className="w-[40.957px] h-[40.957px] lg:w-[60px] lg:h-[60px] hover:scale-110 transition duration-700"
               />
             </a>
             <a href="https://x.com/fav_ajebo?t=QIsuQzM1r-BgyvgLsJUlXA&s=09" target="_blank">
               <Image 
               src={xIcon} 
               alt="X Icon" 
-              className="w-[46.957px] h-[46.957px] lg:w-[70px] lg:h-[70px] hover:scale-110 transition duration-700" 
+              className="w-[40.957px] h-[40.957px] lg:w-[60px] lg:h-[60px] hover:scale-110 transition duration-700" 
               />
             </a>
             <a href="https://wa.me/09015096434" target="_blank">
               <Image
                 src={whatsappIcon}
                 alt="Whatsapp Icon"
-                className="w-[46.957px] h-[46.957px] lg:w-[70px] lg:h-[70px] hover:scale-110 transition duration-700"
+                className="w-[40.957px] h-[40.957px] lg:w-[60px] lg:h-[60px] hover:scale-110 transition duration-700"
               />
             </a>
           </div>
         </div>
       </div>
-      <div>
+      {/* FooterTime component fixed at the bottom */}
+      <div className="fixed bottom-0 left-0 w-full z-30 ">
         <FooterTime />
       </div>
     </footer>

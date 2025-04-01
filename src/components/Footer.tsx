@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
       </div>
       {/* FooterTime component fixed at the bottom */}
-      <div className="fixed bottom-0 left-0 w-full z-30 ">
+      <div className="fixed bottom-0 left-0 px-4 md:px-6 w-full z-30 ">
         <FooterTime />
       </div>
     </footer>

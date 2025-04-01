@@ -50,7 +50,7 @@ export default function FooterTime() {
           <ThemeToggle />
         </div>
         <a
-          href="#resume"
+          href="https://drive.google.com/file/d/1Dg-ZnLTsRlFWenudvilW_OOnOkjiKkH-/view?usp=drive_link"
           className="bg-[#DE950C] hover:bg-[#de950ca1] transition duration-500 rounded-[100px] shadow-lg py-4 md:py-[18px] px-6 md:px-[38px] text-[#F1F1F1] font-medium text-sm md:text-lg"
         >
           CV/Resume

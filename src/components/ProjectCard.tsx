@@ -77,33 +77,33 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </p>
 
           {/* Render the case study link only if it exists */}
-          {project.caseStudyLink && (
-            <Link
-              href={project.caseStudyLink}
+          {project.liveProjectLink && (
+            <a
+              href={project.liveProjectLink}
               className="text-[#DE950C] underline font-bold text-sm md:text-lg"
               rel="noopener noreferrer"
+              target="_blank"
             >
-              Read Case Study
-            </Link>
+              {project.linkText}
+            </a>
           )}
 
           {/* Render the live project link or a "Coming Soon" button */}
           <div
             className={`rounded-[30px] w-full lg:w-fit border-2 ${
-              project.liveProjectLink
+              project.caseStudyLink
                 ? "border-[#DE950C] bg-[#DE950C]"
                 : "border-gray-500 bg-gray-500"
             } backdrop-blur-[47px] px-4 py-[16px] mt-[50px] flex items-center justify-center`}
           >
-            {project.liveProjectLink ? (
-              <a
-                href={project.liveProjectLink}
+            {project.caseStudyLink ? (
+              <Link
+                href={project.caseStudyLink}
                 className="text-[#fff] font-medium text-sm md:text-lg"
-                target="_blank"
                 rel="noopener noreferrer"
               >
-                {project.linkText}
-              </a>
+                Read Case Study
+              </Link>
             ) : (
               <button
                 className="text-[#fff] w-full font-medium text-sm md:text-lg cursor-not-allowed"

@@ -8,11 +8,17 @@ import { useTheme } from "next-themes";
 
 export default function FooterTime() {
   const [currentTime, setCurrentTime] = useState("");
+  // const [userTimeZone, setUserTimeZone] = useState("");
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
+
+    // Detect user's time zone
+    const detectedTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // setUserTimeZone(detectedTimeZone);
+
     const interval = setInterval(() => {
       const now = new Date();
       const options = {
@@ -20,8 +26,10 @@ export default function FooterTime() {
         minute: "numeric" as const,
         second: "numeric" as const,
         hour12: true,
+        timeZone: detectedTimeZone,
         timeZoneName: "short" as const,
       };
+      
       setCurrentTime(now.toLocaleTimeString("en-US", options));
     }, 1000);
 
@@ -38,10 +46,10 @@ export default function FooterTime() {
     >
       <div className="flex items-center w-fit">
         <div className="w-[70px] h-[70px] hidden lg:flex">
-          <Image src={avatar} alt="Logo" className="w-full h-full" />
+          <Image src={avatar} alt="Logo" className="w-full h renormalization"/>
         </div>
         <p className="text-base lg:text-[20px] font-[500] ">
-          {currentTime}. <span className="hidden lg:inline">Abuja, Nigeria</span>
+          {currentTime}.
         </p>
       </div>
 
